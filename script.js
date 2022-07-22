@@ -12,7 +12,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-  
 }
 
 function generatePassword() {
@@ -23,20 +22,20 @@ function generatePassword() {
     prompt("please specify the password length (between 8 to 128) : ")
   );
 
-  console.log("User selected this length: " + passwordLength); //--------------------Console log--------------------//
+  // console.log("User selected this length: " + passwordLength); //--------------------Console log--------------------//
 
   if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
-    console.log("edge case caught"); //--------------------Console log--------------------//
+    // console.log("edge case caught"); //--------------------Console log--------------------//
     alert("This is not a valid input please try again!");
     generatePassword();
   }
 
   if (confirm("Do you want to add Lowercase char ?")) {
-    console.log("Lowercase selected by user"); //--------------------Console log--------------------//
+    // console.log("Lowercase selected by user"); //--------------------Console log--------------------//
 
     functioncall.push(
       (get_low = function () {
-        console.log(" generate random lower char"); //--------------------Console log--------------------//
+        // console.log(" generate random lower char"); //--------------------Console log--------------------//
 
         var lower1 = "abcdefghijklmnopqrstuvwxyz";
         return lower1.charAt(Math.floor(Math.random() * 27));
@@ -45,11 +44,11 @@ function generatePassword() {
   }
 
   if (confirm("Do you want to add Uppercase char?")) {
-    console.log(" Uppercase selected by user"); //--------------------Console log--------------------//
+    // console.log(" Uppercase selected by user"); //--------------------Console log--------------------//
 
     functioncall.push(
       (get_upp = function () {
-        console.log("generate random Upper char"); //--------------------Console log--------------------//
+        // console.log("generate random Upper char"); //--------------------Console log--------------------//
 
         var upper1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         return upper1.charAt(Math.floor(Math.random() * 27));
@@ -58,11 +57,11 @@ function generatePassword() {
   }
 
   if (confirm("Do you want to add numeric char ?")) {
-    console.log("numeric char selected by user"); //--------------------Console log--------------------//
+    // console.log("numeric char selected by user"); //--------------------Console log--------------------//
 
     functioncall.push(
       (get_num = function () {
-        console.log("generate random num char"); //--------------------Console log--------------------//
+        // console.log("generate random num char"); //--------------------Console log--------------------//
 
         var upper1 = "1234567890";
         return upper1.charAt(Math.floor(Math.random() * 11));
@@ -91,7 +90,7 @@ function generatePassword() {
   for (let index = 0; index < passwordLength; index++) {
     var rand = Math.floor(Math.random() * functioncall.length);
 
-    // console.log("Random number: " + rand); 
+    // console.log("Random number: " + rand);
 
     generatedPassword += functioncall[rand]();
   }
